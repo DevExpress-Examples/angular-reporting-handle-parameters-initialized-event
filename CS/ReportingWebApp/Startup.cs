@@ -26,9 +26,9 @@ namespace ReportingWebApp {
             services.AddDevExpressControls();
             services.AddScoped<IReportProvider, CustomReportProvider>();
             services
-                .AddMvc()
-                .AddNewtonsoftJson()
-                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+                .AddControllersWithViews()
+                .AddNewtonsoftJson();
+            
             services.ConfigureReportingServices(configurator => {
                 configurator.ConfigureReportDesigner(designerConfigurator => {
                 });
