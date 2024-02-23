@@ -16,8 +16,8 @@ The example below demonstrates how to handle the [ParametersInitialized](https:/
 
 ## Files to Look At
 
-- [report-viewer.html](CS/ReportingWebApp/ClientApp/src/app/reportviewer/report-viewer.html)
-- [report-viewer.ts](CS/ReportingWebApp/ClientApp/src/app/reportviewer/report-viewer.ts)
+- [report-viewer.html](ReportingWebApp/ClientApp/src/app/reportviewer/report-viewer.html)
+- [report-viewer.ts](ReportingWebApp/ClientApp/src/app/reportviewer/report-viewer.ts)
 
 <!-- default file list end -->
 

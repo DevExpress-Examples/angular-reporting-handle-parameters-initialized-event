@@ -38,7 +38,7 @@ export class ReportViewerComponent {
             (x: any) => x.parameterDescriptor.name == "strParam")[0];
 
         booleanParam && booleanParam.events.on('propertyChanged', (args: any) => {
-            if(args.propertyName === 'value') {
+            if (args.propertyName === 'value') {
                 strParam.value = args.newVal.toString();
             }
         });
