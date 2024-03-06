@@ -12,15 +12,6 @@ The example below demonstrates how to handle the [ParametersInitialized](https:/
 
 ![](Images/reporting-angular-customize-parameter-panel.png)
 
-<!-- default file list -->
-
-## Files to Look At
-
-- [report-viewer.html](ReportingWebApp/ClientApp/src/app/reportviewer/report-viewer.html)
-- [report-viewer.ts](ReportingWebApp/ClientApp/src/app/reportviewer/report-viewer.ts)
-
-<!-- default file list end -->
-
 ## How to Run the Example
 
 Download the project and do the following:
@@ -28,6 +19,11 @@ Download the project and do the following:
 1. Update NuGet packages.
 2. Build and run the project.
 3. Navigate to the page that contains the document viewer.
+
+## Files to Review
+
+- [report-viewer.html](ReportingWebApp/ClientApp/src/app/reportviewer/report-viewer.html)
+- [report-viewer.ts](ReportingWebApp/ClientApp/src/app/reportviewer/report-viewer.ts)
 
 ## Documentation
 
