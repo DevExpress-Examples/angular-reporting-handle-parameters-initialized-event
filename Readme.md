@@ -32,8 +32,8 @@ Open your browser and navigate to the URL specified in the command output to see
 
 ## Files to Review
 
-- [report-viewer.html](ReportingWebApp/ClientApp/src/app/reportviewer/report-viewer.html)
-- [report-viewer.ts](ReportingWebApp/ClientApp/src/app/reportviewer/report-viewer.ts)
+- [report-viewer.html](ReportingWebApp/ReportingWebApp.Client/src/app/reportviewer/report-viewer.html)
+- [report-viewer.ts](ReportingWebApp/ReportingWebApp.Client/src/app/reportviewer/report-viewer.ts)
 
 ## Documentation
 
