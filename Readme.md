@@ -13,13 +13,22 @@ The example below demonstrates how to handle the [ParametersInitialized](https:/
 
 ![](Images/reporting-angular-customize-parameter-panel.png)
 
-## How to Run the Example
+## Run the Project
 
-Download the project and do the following:
+Navigate to the *ReportingWebApp/ReportingWebApp.Server* folder and use the following command to restore dependencies and run the application:
 
-1. Update NuGet packages.
-2. Build and run the project.
-3. Navigate to the page that contains the document viewer.
+```console
+cd ReportingWebApp/ReportingWebApp.Server
+dotnet run
+```
+
+Two command prompts appear:
+
+- The ASP.NET Core API project running
+- The Angular CLI running the ng start command
+
+Open your browser and navigate to the URL specified in the command output to see the result.
+
 
 ## Files to Review
 
