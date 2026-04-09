@@ -20,31 +20,34 @@ export class ReportViewer {
     protected reportUrl: string = "XtraReport1";
     protected invokeAction: string = '/DXXRDV';
 
+    private findParameter(parametersModel: any, path: string) {
+            return parametersModel.parameters.find((parameter: any) => parameter.path === path);
+        }
+
     OnParametersInitialized(event: any) {
-        // Specify an invisible integer parameter's value on viewer initialization.
-        var invisibleIntParamValue = 42;
-        var intParam = event.args.ActualParametersInfo.filter(
-            (x: any) => x.parameterDescriptor.name == "intParam")[0];
-        intParam.value = invisibleIntParamValue;
+        const parametersModel = event.args.ParametersModel;
 
-        // Specify a visible Boolean parameter's value on viewer initialization.
-        var visibleBooleanParamValue = true;
-        var booleanParam = event.args.ActualParametersInfo.filter(
-            (x: any) => x.parameterDescriptor.name == "booleanParam")[0];
-        booleanParam.value = visibleBooleanParamValue;
+        const intParam = this.findParameter(parametersModel, "intParam");
+        const booleanParam = this.findParameter(parametersModel, "booleanParam");
+        const strParam = this.findParameter(parametersModel, "strParam");
 
-        // Update a string parameter value when a user changes the Boolean parameter value.
-        var strParam = event.args.ActualParametersInfo.filter(
-            (x: any) => x.parameterDescriptor.name == "strParam")[0];
+        if (intParam && booleanParam && strParam) {
+            // Specify an invisible integer parameter's value on viewer initialization.
+            const invisibleIntParamValue = 42;
+            parametersModel.setParameterValue("intParam", invisibleIntParamValue);
 
-        booleanParam && booleanParam.events.on('propertyChanged', (args: any) => {
-            if (args.propertyName === 'value') {
-                strParam.value = args.newVal.toString();
-            }
-        });
+            // Specify a visible Boolean parameter's value on viewer initialization.
+            const visibleBooleanParamValue = true;
+            parametersModel.setParameterValue("booleanParam", visibleBooleanParamValue);
 
-        intParam & booleanParam & strParam && event.args.Submit();
-    }
-
+            // Update a string parameter value when a user changes the Boolean parameter value.
+            booleanParam && booleanParam.events.on('propertyChanged', (args: any) => {
+                if (args.propertyName === 'value') {
+                    parametersModel.setParameterValue("strParam", args.newValue?.toString());
+                }
+            });
+            event.args.Submit();
+        }
+    };
     constructor(@Inject('BASE_URL') protected readonly hostUrl: string) { }
 }
